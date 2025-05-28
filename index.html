@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuários</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#cadastro" data-aba="cadastro">Cadastro</a></li>
+                <li><a href="#lista" data-aba="lista">Lista de Usuários</a></li>
+                <li><a href="#cep" data-aba="cep">Consulta de CEP</a></li>
+                <li><a href="#sobre" data-aba="sobre">Sobre o Projeto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="cadastro" class="aba-conteudo">
+            <h2>Cadastro de Usuário</h2>
+            <form id="cadastro-form">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf" required>
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade" name="idade" min="0" required>
+                    <small class="error-message"></small>
+                </div>
+                <button type="submit">Cadastrar</button>
+                <div id="cadastro-feedback" class="feedback"></div>
+            </form>
+        </section>
+
+        <section id="lista" class="aba-conteudo">
+            <h2>Lista de Usuários</h2>
+            <div class="table-container">
+                <table id="usuarios-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>CPF</th>
+                            <th>Idade</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usuarios-tbody">
+                        </tbody>
+                </table>
+            </div>
+            <button id="apagar-tudo-btn">Apagar Todos os Usuários</button>
+            <div id="lista-feedback" class="feedback"></div>
+        </section>
+
+        <dialog id="modal-edicao">
+            <h3>Editar Usuário</h3>
+            <form id="form-edicao">
+                <div class="form-group">
+                    <label for="edit-nome">Nome:</label>
+                    <input type="text" id="edit-nome" name="nome" required>
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="edit-email">Email:</label>
+                    <input type="email" id="edit-email" name="email" required>
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="edit-cpf">CPF:</label>
+                    <input type="text" id="edit-cpf" name="cpf" required>
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="edit-idade">Idade:</label>
+                    <input type="number" id="edit-idade" name="idade" min="0" required>
+                    <small class="error-message"></small>
+                </div>
+                <div class="botoes-modal">
+                    <button type="submit">Salvar Edições</button>
+                    <button type="button" id="cancelar-edicao">Cancelar</button>
+                </div>
+            </form>
+        </dialog>
+
+        <section id="cep" class="aba-conteudo">
+            <h2>Consulta de CEP</h2>
+            <form id="cep-form">
+                <div class="form-group">
+                    <label for="cep-input">CEP:</label>
+                    <input type="text" id="cep-input" name="cep" maxlength="8" required>
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="rua">Rua:</label>
+                    <input type="text" id="rua" name="rua" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" id="bairro" name="bairro" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" name="estado" readonly>
+                </div>
+                <button type="button" id="consultar-cep-btn">Consultar</button>
+                <div id="cep-feedback" class="feedback"></div>
+            </form>
+        </section>
+
+        <section id="sobre" class="aba-conteudo">
+            <h2>Sobre o Projeto</h2>
+            <p>Esta aplicação web demonstra o uso de HTML semântico, CSS para estilização e layout, e JavaScript para interatividade, validação, armazenamento local e consumo de dados de uma API externa.</p>
+
+            <h3>Conceitos Utilizados:</h3>
+            <ul>
+                <li><strong>HTML Semântico:</strong> Utilização de tags como <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;form&gt;</code>, <code>&lt;table&gt;</code>, etc., para estruturar o conteúdo de forma clara e significativa.</li>
+                <li><strong>CSS:</strong>
+                    <ul>
+                        <li><strong>Box Model:</strong> Compreensão de como as propriedades de margem, borda, preenchimento e conteúdo afetam o tamanho e o layout dos elementos.</li>
+                        <li><strong>Flexbox:</strong> Utilizado na tela de cadastro para organizar os elementos do formulário de forma flexível e responsiva.</li>
+                        <li><strong>Grid:</strong> Utilizado na tela de lista de usuários para criar um layout de tabela responsivo e organizado.</li>
+                        <li><strong>Media Queries:</strong> Implementadas para adaptar o layout da lista de usuários a diferentes tamanhos de tela, garantindo a responsividade.</li>
+                        <li><strong>Tipografia e Hierarquia Visual:</strong> Estilização do texto para melhorar a legibilidade e destacar informações importantes.</li>
+                        <li><strong>Layout Fluido:</strong> Utilização de unidades relativas para criar layouts que se adaptam ao tamanho da tela.</li>
+                    </ul>
+                </li>
+                <li><strong>JavaScript:</strong>
+                    <ul>
+                        <li><strong>Interações no DOM:</strong> Manipulação dos elementos HTML para criar funcionalidades dinâmicas.</li>
+                        <li><strong>Validações em Tempo Real:</strong> Verificação dos dados do formulário de cadastro enquanto o usuário digita.</li>
+                        <li><strong>Armazenamento Local (LocalStorage):</strong> Utilização do localStorage para salvar e recuperar os dados dos usuários no navegador.</li>
+                        <li><strong>Fetch API:</strong> Realização de requisições HTTP para consumir dados da API de consulta de CEP.</li>
+                        <li><strong>Manipulação de Promises e Respostas HTTP:</strong> Tratamento das respostas assíncronas da API.</li>
+                    </ul>
+                </li>
+                <li><strong>Fetch API:</strong> Interface para buscar recursos de forma assíncrona na web.</li>
+                <li><strong>LocalStorage:</strong> Mecanismo de armazenamento web que permite salvar dados localmente no navegador do usuário.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Amauri B. S. Junior</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
