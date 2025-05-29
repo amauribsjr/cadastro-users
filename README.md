@@ -36,7 +36,7 @@ cadastro-users/
 2. **Abra o arquivo `index.html` em seu navegador**:
 
    - Clique duas vezes no arquivo `index.html` ou
-   - Utilize uma extensão como o Live Server no VS Code para melhor experiência.
+   - (Opcional) Utilize uma extensão como o Live Server no VS Code para melhor experiência.
 
 ## 📌 Funcionalidades
 
